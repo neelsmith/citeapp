@@ -13,7 +13,11 @@ persistLauncher in Test := false
 
 testFrameworks += new TestFramework("utest.runner.Framework")
 
+
+resolvers += Resolver.bintrayRepo("neelsmith", "maven")
 libraryDependencies ++= Seq(
     "org.scala-js" %%% "scalajs-dom" % "0.9.1",
-    "com.lihaoyi" %%% "utest" % "0.4.5" % "test"
+    "com.lihaoyi" %%% "utest" % "0.4.5" % "test",
+
+    "edu.holycross.shot.cite" %% "xcite" % "1.0.0"
 )
