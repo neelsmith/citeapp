@@ -1,8 +1,8 @@
-package edu.holycross.shot
+package  edu.holycross.shot
 
 import utest._
 
-object CiteApp extends TestSuite {
+object CiteAppTest extends TestSuite {
 
   import CiteApp._
 
