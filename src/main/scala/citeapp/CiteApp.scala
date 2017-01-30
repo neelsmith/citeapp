@@ -32,14 +32,15 @@ object CiteApp extends js.JSApp {
 
     val u1 = CtsUrn("urn:cts:greekLit:tlg0012.tlg001:1.7")
     val u2 = CtsUrn("urn:cts:greekLit:tlg0012.tlg001.msA:1")
-    val msg = "Comparing " + u1 + " and " + u2 + " - do they match? <strong>" + u1.urnMatch(u2) + "</strong>."
+    val twiddle = u1 ~~ u2
+
+    val msg = "Comparing " + u1 + " and " + u2 + " - do they match? <strong>" + twiddle + "</strong>."
 
     paragraph.innerHTML = "<p>" + msg + "</p>"
 
 
 
     dom.document.getElementById("playground").appendChild(paragraph)
-
     val p = paragraph.asInstanceOf[ElementExt]
   }
 

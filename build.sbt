@@ -19,5 +19,5 @@ libraryDependencies ++= Seq(
     "org.scala-js" %%% "scalajs-dom" % "0.9.1",
     "com.lihaoyi" %%% "utest" % "0.4.5" % "test",
 
-    "edu.holycross.shot.cite" %%% "xcite" % "1.1.0"
+    "edu.holycross.shot.cite" %%% "xcite" % "1.2.0"
 )
