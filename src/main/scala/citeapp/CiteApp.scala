@@ -1,8 +1,10 @@
-package edu.holycross.shot
+package edu.holycross.shot.demo
 
 import scala.scalajs.js
 import js.annotation.JSExport
 import org.scalajs.dom
+
+import edu.holycross.shot.cite._
 
 @js.native
 trait EventName extends js.Object {
@@ -22,17 +24,23 @@ trait ElementExt extends js.Object {
       f: js.Function1[name.EventType, _]): Unit
 }
 
+
+
 object CiteApp extends js.JSApp {
   def main(): Unit = {
     val paragraph = dom.document.createElement("p")
-    paragraph.innerHTML = "<strong>It works!</strong>"
+
+    val u1 = CtsUrn("urn:cts:greekLit:tlg0012.tlg001:1.7")
+    val u2 = CtsUrn("urn:cts:greekLit:tlg0012.tlg001.msA:1")
+    val msg = "Comparing " + u1 + " and " + u2 + " - do they match? <strong>" + u1.urnMatch(u2) + "</strong>."
+
+    paragraph.innerHTML = "<p>" + msg + "</p>"
+
+
+
     dom.document.getElementById("playground").appendChild(paragraph)
 
     val p = paragraph.asInstanceOf[ElementExt]
   }
 
-  /** Computes the square of an integer.
-   *  This demonstrates unit testing.
-   */
-  def square(x: Int): Int = x*x
 }
